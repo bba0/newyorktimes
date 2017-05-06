@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -26,10 +27,10 @@ import io.reactivex.Observable;
 
 public class StoryListFragment extends Fragment implements StoryListContract.View{
 
-    String TAG = "lol";
-
     @Bind(R.id.story_list_recycler)
     RecyclerView mRecycler;
+    @Bind(R.id.story_list_swiperefresh)
+    SwipeRefreshLayout mSwipeRefresh;
 
     StoryListContract.Presenter mPresenter;
     View mRoot;
@@ -58,6 +59,13 @@ public class StoryListFragment extends Fragment implements StoryListContract.Vie
             mRecycler.setItemViewCacheSize(20);
             mRecycler.setDrawingCacheEnabled(true);
             mRecycler.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
+            mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+                @Override
+                public void onRefresh() {
+                    mAdapter.removeAll();
+                    mPresenter.getStoryList();
+                }
+            });
         }
         return mRoot;
     }
@@ -75,6 +83,11 @@ public class StoryListFragment extends Fragment implements StoryListContract.Vie
     @Override
     public void toast(String s) {
         Toast.makeText(getActivity(), s, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void setSwipeRefresh(boolean b) {
+        mSwipeRefresh.setRefreshing(b);
     }
 
     @Override

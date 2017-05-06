@@ -14,6 +14,7 @@ public interface StoryListContract {
     interface View extends BaseView<Presenter> {
         void setStoryList(NewYorkTimesData pData);
         void toast(String s);
+        void setSwipeRefresh(boolean b);
     }
 
     interface Presenter extends BasePresenter {

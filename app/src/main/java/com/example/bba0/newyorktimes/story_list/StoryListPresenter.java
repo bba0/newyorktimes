@@ -37,6 +37,7 @@ public class StoryListPresenter implements StoryListContract.Presenter {
             @Override
             public void accept(Response<NewYorkTimesData> newYorkTimesDataResponse) throws Exception {
                 Log.d(TAG, "accept: " + newYorkTimesDataResponse.body().toString());
+                mView.setSwipeRefresh(false);
                 mView.setStoryList(newYorkTimesDataResponse.body());
             }
         }, new Consumer<Throwable>() {

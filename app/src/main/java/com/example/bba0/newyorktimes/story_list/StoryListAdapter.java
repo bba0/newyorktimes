@@ -51,6 +51,11 @@ public class StoryListAdapter extends RecyclerView.Adapter<StoryListAdapter.Stor
             notifyItemRangeInserted(p, pData.size());
         }
     }
+
+    public void removeAll() {
+        mData.clear();
+        notifyDataSetChanged();
+    }
     @Override
     public int getItemCount() {
         return mData.size();
