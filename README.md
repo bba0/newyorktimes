@@ -9,7 +9,7 @@ apkurl: https://github.com/bba0/newyorktimes/blob/master/app-debug.apk
 
 
 해결된 문제:
-                1. Title Box 색은 Palette 를 사용해 해결
+                1: Title Box 색은 Palette 를 사용해 해결
                 2. 이미지가 없는 경우 처리
                 3. Network Error 처리
 
