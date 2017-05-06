@@ -42,6 +42,23 @@ public class NewYorkTimesData {
             }
         }
 
+        public String getUrl() {
+            if (short_url != null && short_url.length() != 0) {
+                return short_url;
+            } else if (url != null && url.length() != 0) {
+                return url;
+            } else {
+                return "https://mobile.nytimes.com/";
+            }
+        }
+
+        public String getTitle() {
+            if (title == null || title.length() == 0) {
+                title = "NewYorkTimes";
+            }
+            return title;
+        }
+
         public enum ImageType {
             PORTRAIT, LANDSCAPE,
         }

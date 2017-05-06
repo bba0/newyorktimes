@@ -47,7 +47,7 @@ public class StoryListFragment extends Fragment implements StoryListContract.Vie
                 @Override
                 public void onClick(NewYorkTimesData.NewYorkTimesResultData pData) {
                     Intent intent = new Intent(getActivity(), StoryActivity.class);
-                    intent.putExtra("url", pData.getShort_url());
+                    intent.putExtra("url", pData.getUrl());
                     getActivity().startActivity(intent);
                 }
             });
