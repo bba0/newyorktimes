@@ -8,11 +8,11 @@ lombok 설치url: https://github.com/mplushnikov/lombok-intellij-plugin
 apkurl: https://github.com/bba0/newyorktimes/blob/master/app-debug.apk
 
 
-해결된 문제:
-                1: Title Box 색은 Palette 를 사용해 해결
-                2. 이미지가 없는 경우 처리
-                3. Network Error 처리
+해결된 문제
 
+1. Title Box 색은 Palette 를 사용해 해결
+2. 이미지가 없는 경우 처리
+3. Network Error 처리
 
 개선 및 해결해야 하는 문제:
                 1. 이미지가 없는 경우 (기본 이미지가 필요합니다. 지금은 기본 이미지가 없어 Icon 이미지로 해놨습니다.)
