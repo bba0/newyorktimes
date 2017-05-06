@@ -5,7 +5,7 @@ Android_Studio에 lombok을 설치해야 Build가 됩니다.
 
 lombok 설치url: https://github.com/mplushnikov/lombok-intellij-plugin
 
-apkurl:
+apkurl: https://github.com/bba0/newyorktimes/blob/master/app-debug.apk
 
 
 해결된 문제:
